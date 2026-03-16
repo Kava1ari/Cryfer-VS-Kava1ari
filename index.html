@@ -1,1 +1,208 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kava1ari vs Cryfer | Epic Twitch Duels</title>
+    <style>
+        /* Grundlegendes Design & Epic Gamer Vibe */
+        body {
+            background-color: #0d0d12;
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: radial-gradient(circle at 50% 0%, #2b1055 0%, #0d0d12 60%);
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header {
+            padding: 50px 20px 20px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 20px #9d4edd;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #a3a3a3;
+            font-size: 1.2rem;
+        }
+
+        /* Die Versus-Sektion (Eure Profile) */
+        .versus-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin: 50px 20px;
+            flex-wrap: wrap;
+        }
+
+        .player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .player img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #1a1a24;
+            transition: transform 0.3s ease;
+        }
+
+        /* Individuelle Neon-Effekte für euch beide */
+        .player.kava img {
+            box-shadow: 0 0 30px #ff0055; /* Roter/Pinker Glow */
+        }
+
+        .player.cryfer img {
+            box-shadow: 0 0 30px #00f3ff; /* Blauer/Cyan Glow */
+        }
+
+        .player img:hover {
+            transform: scale(1.05);
+        }
+
+        .player h2 {
+            margin-top: 20px;
+            font-size: 2rem;
+        }
+
+        .player.kava h2 { color: #ff0055; text-shadow: 0 0 10px #ff0055; }
+        .player.cryfer h2 { color: #00f3ff; text-shadow: 0 0 10px #00f3ff; }
+
+        .vs-badge {
+            font-size: 4rem;
+            font-weight: bold;
+            font-style: italic;
+            background: linear-gradient(45deg, #ff0055, #00f3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Twitch Buttons */
+        .twitch-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #9146FF;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(145, 70, 255, 0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        .twitch-btn:hover {
+            background-color: #a970ff;
+        }
+
+        /* Scoreboard / Ergebnisse */
+        .scoreboard {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .scoreboard h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffd700; /* Gold für die Halle der Ehre */
+            text-shadow: 0 0 10px #ffd700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #a3a3a3;
+        }
+
+        /* Farben für Gewinner */
+        .win-kava { color: #ff0055; font-weight: bold; }
+        .win-cryfer { color: #00f3ff; font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>BATTLE OF THE STREAMERS</h1>
+        <p>Willkommen in der Arena. Wer gewinnt den nächsten Gaming-Abend?</p>
+    </div>
+
+    <div class="versus-container">
+        <div class="player kava">
+            <img src="kava1ari.png" alt="Kava1ari Profilbild">
+            <h2>Kava1ari</h2>
+            <a href="https://twitch.tv/DEIN_TWITCH_NAME" target="_blank" class="twitch-btn">Zum Twitch Stream</a>
+        </div>
+
+        <div class="vs-badge">VS</div>
+
+        <div class="player cryfer">
+            <img src="cryfer.png" alt="Cryfer Profilbild">
+            <h2>Cryfer</h2>
+            <a href="https://twitch.tv/DEIN_TWITCH_NAME" target="_blank" class="twitch-btn">Zum Twitch Stream</a>
+        </div>
+    </div>
+
+    <div class="scoreboard">
+        <h3>🏆 Match Historie 🏆</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Gespieltes Spiel</th>
+                    <th>Gewinner</th>
+                    <th>Score / Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>16.03.2026</td>
+                    <td>Mario Kart 8 Deluxe</td>
+                    <td class="win-cryfer">Cryfer</td>
+                    <td>3 zu 1</td>
+                </tr>
+
+                <tr>
+                    <td>09.03.2026</td>
+                    <td>Super Smash Bros</td>
+                    <td class="win-kava">Kava1ari</td>
+                    <td>Best of 5</td>
+                </tr>
+
+                </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

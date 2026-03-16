@@ -126,14 +126,13 @@
         /* Individuelle Neon-Effekte & Spiegelung für Kava */
         .player.kava img { 
             box-shadow: 0 0 30px #ff0055; 
-            transform: scaleX(-1); /* Hier wird Kavas Bild gespiegelt */
+            transform: scaleX(-1); 
         }
         
         .player.cryfer img { 
             box-shadow: 0 0 30px #00f3ff; 
         }
 
-        /* Hover-Effekte (Wichtig: Kava behält die Spiegelung beim Hovern!) */
         .player.kava img:hover { 
             transform: scaleX(-1) scale(1.05); 
         }
@@ -257,7 +256,7 @@
         <span class="score-name color-kava">Kava1ari</span>
         <span class="score-number color-kava">1</span>
         <span class="score-label" style="margin: 0;">-</span>
-        <span class="score-number color-cryfer score-leader">2</span>
+        <span class="score-number color-cryfer">1</span>
         <span class="score-name color-cryfer">CryferTV</span>
     </div>
 
@@ -314,8 +313,8 @@
 
     <script>
         // HIER DEINE SCHLÜSSEL EINTRAGEN
-        const TWITCH_CLIENT_ID = 'DEINE_CLIENT_ID_HIER'; 
-        const TWITCH_CLIENT_SECRET = 'DEIN_CLIENT_SECRET_HIER';
+        const TWITCH_CLIENT_ID = '0597pkj159nnh4jqxha6h6u8vbq672'; 
+        const TWITCH_CLIENT_SECRET = 'r28l9f3u8utuq7tpdzbiuq43uai2bx';
         
         const streamers = ['kava1ari', 'cryfertv'];
 

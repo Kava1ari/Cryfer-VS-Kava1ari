@@ -40,13 +40,13 @@
         /* --- OVERALL SCORE (Gesamtstand) --- */
         .overall-score-container {
             display: flex;
+            flex-direction: column; 
             justify-content: center;
             align-items: center;
-            gap: 20px;
             margin: 0 auto 40px;
             background: rgba(0, 0, 0, 0.6);
-            padding: 15px 40px;
-            border-radius: 50px;
+            padding: 20px 50px;
+            border-radius: 25px; 
             width: fit-content;
             box-shadow: 0 0 20px rgba(157, 78, 221, 0.3);
             border: 2px solid #9d4edd;
@@ -54,19 +54,29 @@
 
         .score-label {
             color: #a3a3a3;
-            font-size: 1rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-right: 15px;
+            letter-spacing: 4px;
+            margin-bottom: 15px; 
+            padding-bottom: 10px;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+
+        .score-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
 
         .score-name { font-size: 1.5rem; font-weight: bold; }
         .score-number { font-size: 2.5rem; font-weight: bold; margin: 0 10px; }
+        .score-divider { font-size: 2rem; color: #a3a3a3; font-weight: bold; }
         
         .color-kava { color: #ff0055; text-shadow: 0 0 10px #ff0055; }
         .color-cryfer { color: #00f3ff; text-shadow: 0 0 10px #00f3ff; }
         
-        /* Hervorhebung für den Führenden im Gesamtstand */
         .score-leader { 
             color: #ffd700; 
             text-shadow: 0 0 20px #ffd700; 
@@ -79,7 +89,7 @@
             justify-content: center;
             align-items: center;
             gap: 50px;
-            margin: 50px 20px;
+            margin: 60px 20px 50px; /* Etwas mehr Abstand nach oben für das Banner */
             flex-wrap: wrap;
         }
 
@@ -90,10 +100,9 @@
             position: relative;
         }
 
-        /* Banner für den letzten Gewinner */
         .champion-banner {
             position: absolute;
-            top: -30px;
+            top: -40px; /* Weiter nach oben geschoben wegen der größeren Bilder */
             background: linear-gradient(90deg, #ffd700, #ffaa00);
             color: #000;
             padding: 8px 20px;
@@ -114,23 +123,24 @@
             100% { transform: translateY(0px); }
         }
 
+        /* 50% GRÖSSERE BILDER (300px statt 200px) & Bessere Qualität */
         .player img {
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #1a1a24;
             transition: transform 0.3s ease;
+            image-rendering: high-quality; /* Sagt dem Browser: Mach es scharf! */
         }
 
-        /* Individuelle Neon-Effekte & Spiegelung für Kava */
         .player.kava img { 
-            box-shadow: 0 0 30px #ff0055; 
+            box-shadow: 0 0 40px rgba(255, 0, 85, 0.6); /* Glow etwas vergrößert */
             transform: scaleX(-1); 
         }
         
         .player.cryfer img { 
-            box-shadow: 0 0 30px #00f3ff; 
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.6); 
         }
 
         .player.kava img:hover { 
@@ -140,32 +150,31 @@
             transform: scale(1.05); 
         }
 
-        /* Zusatz-Effekt für den aktuellen Champion (Goldener Rahmen) */
         .player.champion img {
             border-color: #ffd700;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
         }
 
         .player h2 {
-            margin-top: 20px;
+            margin-top: 25px; /* Etwas mehr Abstand wegen großem Bild */
             margin-bottom: 15px;
-            font-size: 2rem;
+            font-size: 2.5rem; /* Namen auch leicht vergrößert, damit es proportional passt */
         }
 
         .player.kava h2 { color: #ff0055; text-shadow: 0 0 10px #ff0055; }
         .player.cryfer h2 { color: #00f3ff; text-shadow: 0 0 10px #00f3ff; }
 
         .vs-badge {
-            font-size: 4rem;
+            font-size: 5rem; /* VS auch leicht vergrößert */
             font-weight: bold;
             font-style: italic;
             background: linear-gradient(45deg, #ff0055, #00f3ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            margin: 0 20px;
         }
 
-        /* Twitch Buttons & Live Badge Container */
         .link-container {
             display: flex;
             align-items: center;
@@ -186,7 +195,6 @@
 
         .twitch-btn:hover { background-color: #a970ff; }
 
-        /* Der pulsierende LIVE-Badge */
         .live-badge {
             display: none;
             background-color: #ff0000;
@@ -252,12 +260,14 @@
     </div>
 
     <div class="overall-score-container">
-        <span class="score-label">Gesamtstand:</span>
-        <span class="score-name color-kava">Kava1ari</span>
-        <span class="score-number color-kava">1</span>
-        <span class="score-label" style="margin: 0;">-</span>
-        <span class="score-number color-cryfer">1</span>
-        <span class="score-name color-cryfer">CryferTV</span>
+        <div class="score-label">Gesamtpunktestand</div>
+        <div class="score-row">
+            <span class="score-name color-kava">Kava1ari</span>
+            <span class="score-number color-kava">1</span>
+            <span class="score-divider">-</span>
+            <span class="score-number color-cryfer">1</span>
+            <span class="score-name color-cryfer">CryferTV</span>
+        </div>
     </div>
 
     <div class="versus-container">
@@ -312,33 +322,18 @@
     </div>
 
     <script>
-        // HIER DEINE SCHLÜSSEL EINTRAGEN
-        const TWITCH_CLIENT_ID = '0597pkj159nnh4jqxha6h6u8vbq672'; 
-        const TWITCH_CLIENT_SECRET = 'r28l9f3u8utuq7tpdzbiuq43uai2bx';
-        
         const streamers = ['kava1ari', 'cryfertv'];
 
         async function checkLiveStatus() {
             try {
-                const tokenResponse = await fetch(`https://id.twitch.tv/oauth2/token?client_id=${TWITCH_CLIENT_ID}&client_secret=${TWITCH_CLIENT_SECRET}&grant_type=client_credentials`, {
-                    method: 'POST'
-                });
-                const tokenData = await tokenResponse.json();
-                const accessToken = tokenData.access_token;
-
-                const streamResponse = await fetch(`https://api.twitch.tv/helix/streams?user_login=kava1ari&user_login=cryfertv`, {
-                    headers: {
-                        'Client-ID': TWITCH_CLIENT_ID,
-                        'Authorization': `Bearer ${accessToken}`
-                    }
-                });
-                const streamData = await streamResponse.json();
-                
-                const liveStreamers = streamData.data.map(stream => stream.user_login.toLowerCase());
-
-                updateBadge('kava1ari', liveStreamers.includes('kava1ari'));
-                updateBadge('cryfertv', liveStreamers.includes('cryfertv'));
-
+                for (const streamer of streamers) {
+                    const response = await fetch(`https://decapi.me/twitch/uptime/${streamer}`);
+                    const text = await response.text();
+                    
+                    const isLive = !text.toLowerCase().includes("offline");
+                    
+                    updateBadge(streamer, isLive);
+                }
             } catch (error) {
                 console.error("Fehler beim Abrufen der Twitch-Daten:", error);
             }
@@ -356,7 +351,7 @@
         }
 
         checkLiveStatus();
-        setInterval(checkLiveStatus, 300000);
+        setInterval(checkLiveStatus, 180000);
     </script>
 </body>
 </html>

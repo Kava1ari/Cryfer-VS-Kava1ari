@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kava1ari vs Cryfer | Epic Twitch Duels</title>
+    <title>Kava1ari vs CryferTV | Epic Twitch Duels</title>
     <style>
         /* Grundlegendes Design & Epic Gamer Vibe */
         body {
@@ -43,7 +42,7 @@
             justify-content: center;
             align-items: center;
             gap: 50px;
-            margin: 50px 20px;
+            margin: 70px 20px 50px; /* Oben etwas mehr Platz für die Krone */
             flex-wrap: wrap;
         }
 
@@ -51,6 +50,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative; /* Wichtig, damit die Krone richtig sitzt */
+        }
+
+        /* Die Krone für den aktuellen Champion */
+        .crown {
+            font-size: 4rem;
+            position: absolute;
+            top: -55px; /* Schiebt die Krone über das Bild */
+            filter: drop-shadow(0 0 15px #ffd700);
+            animation: float 3s ease-in-out infinite; /* Schwebe-Animation */
+            z-index: 10;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(-5deg); }
         }
 
         .player img {
@@ -63,17 +79,10 @@
         }
 
         /* Individuelle Neon-Effekte für euch beide */
-        .player.kava img {
-            box-shadow: 0 0 30px #ff0055; /* Roter/Pinker Glow */
-        }
+        .player.kava img { box-shadow: 0 0 30px #ff0055; }
+        .player.cryfer img { box-shadow: 0 0 30px #00f3ff; }
 
-        .player.cryfer img {
-            box-shadow: 0 0 30px #00f3ff; /* Blauer/Cyan Glow */
-        }
-
-        .player img:hover {
-            transform: scale(1.05);
-        }
+        .player img:hover { transform: scale(1.05); }
 
         .player h2 {
             margin-top: 20px;
@@ -107,9 +116,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .twitch-btn:hover {
-            background-color: #a970ff;
-        }
+        .twitch-btn:hover { background-color: #a970ff; }
 
         /* Scoreboard / Ergebnisse */
         .scoreboard {
@@ -124,7 +131,7 @@
         .scoreboard h3 {
             font-size: 2rem;
             margin-bottom: 20px;
-            color: #ffd700; /* Gold für die Halle der Ehre */
+            color: #ffd700; 
             text-shadow: 0 0 10px #ffd700;
         }
 
@@ -145,7 +152,6 @@
             color: #a3a3a3;
         }
 
-        /* Farben für Gewinner */
         .win-kava { color: #ff0055; font-weight: bold; }
         .win-cryfer { color: #00f3ff; font-weight: bold; }
 
@@ -160,17 +166,18 @@
 
     <div class="versus-container">
         <div class="player kava">
-            <img src="kava1ari.png" alt="Kava1ari Profilbild">
+            <img src="Kava1ari.png" alt="Kava1ari Profilbild">
             <h2>Kava1ari</h2>
-            <a href="https://twitch.tv/DEIN_TWITCH_NAME" target="_blank" class="twitch-btn">Zum Twitch Stream</a>
+            <a href="https://www.twitch.tv/kava1ari" target="_blank" class="twitch-btn">Zum Twitch Stream</a>
         </div>
 
         <div class="vs-badge">VS</div>
 
         <div class="player cryfer">
-            <img src="cryfer.png" alt="Cryfer Profilbild">
-            <h2>Cryfer</h2>
-            <a href="https://twitch.tv/DEIN_TWITCH_NAME" target="_blank" class="twitch-btn">Zum Twitch Stream</a>
+            <div class="crown">👑</div>
+            <img src="Cryfer.png" alt="Cryfer Profilbild">
+            <h2>CryferTV</h2>
+            <a href="https://www.twitch.tv/CryferTV" target="_blank" class="twitch-btn">Zum Twitch Stream</a>
         </div>
     </div>
 
@@ -186,10 +193,11 @@
                 </tr>
             </thead>
             <tbody>
+                
                 <tr>
                     <td>16.03.2026</td>
                     <td>Mario Kart 8 Deluxe</td>
-                    <td class="win-cryfer">Cryfer</td>
+                    <td class="win-cryfer">CryferTV</td>
                     <td>3 zu 1</td>
                 </tr>
 
@@ -200,7 +208,7 @@
                     <td>Best of 5</td>
                 </tr>
 
-                </tbody>
+            </tbody>
         </table>
     </div>
 
